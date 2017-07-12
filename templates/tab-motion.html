@@ -1,5 +1,23 @@
 <ion-view view-title="Motion">
   <ion-content class="padding">
     <h1>In motion</h1>
+  <button class="button button-full button-positive" ng-click="getAccel()">
+  Get accelerometer
+</button>
+<div ng-show="x">
+  x:{{x}}<br>
+  y:{{y}}<br>
+  z:{{z}}
+</div>
+
+
+<div ng-show="xbis">
+  x:{{xbis}}<br>
+  y:{{ybis}}<br>
+  z:{{zbis}}
+</div>
+
+<div style="height: 200px" ng-style="colorProp"></div>
+
   </ion-content>
 </ion-view>
