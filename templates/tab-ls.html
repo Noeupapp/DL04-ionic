@@ -2,6 +2,15 @@
   <ion-content>
 
     <h1>In Local Storage</h1>
+    <div class="list">
+      <label class="item item-input">
+        <input type="text" ng-model="mot" placeholder="Mot à Sauvegarder">
+      </label>
+    </div>
+
+    <button class="button button-full button-positive" ng-click="save(mot)">
+  Sauvegarder {{mot}}
+</button>
 
   </ion-content>
 </ion-view>

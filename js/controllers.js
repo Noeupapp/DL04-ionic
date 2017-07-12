@@ -49,6 +49,11 @@ angular.module('starter.controllers', [])
 .controller('PostsCtrl', function($scope) {
 })
 
-.controller('LsCtrl', function($scope) {
+.controller('LsCtrl', function($scope,$window) {
+  if($window.localStorage.getItem("savedWord") != null) $scope.mot = $window.localStorage.getItem("savedWord")
+  $scope.save = function(mot){
+    //save ici
+    $window.localStorage.setItem("savedWord",mot)
+  }
 
 });
