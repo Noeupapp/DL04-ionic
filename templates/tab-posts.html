@@ -1,5 +1,15 @@
 <ion-view view-title="Posts">
   <ion-content>
     <h1>In posts</h1>
+    <div class="list">
+
+    <a class="item item-avatar" ng-repeat="user in users">
+      <h2>{{user.name | uppercase}}</h2>
+      <h3>Alias {{user.username}}</h3>
+      <p>{{user.email | lowercase}}</p>
+    </a>
+
+</div>
+
   </ion-content>
 </ion-view>

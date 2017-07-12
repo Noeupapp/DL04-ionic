@@ -67,7 +67,23 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('PostsCtrl', function($scope) {
+.controller('PostsCtrl', function($scope,$http) {
+
+  $scope.users = [];
+
+  $http({
+    method: 'GET',
+    url: 'https://jsonplaceholder.typicode.com/users'
+  }).then(function(response) {
+      $scope.users = response.data;
+    }, function(response) {
+
+    });
+
+
+
+
+
 })
 
 .controller('LsCtrl', function($scope,$window) {
