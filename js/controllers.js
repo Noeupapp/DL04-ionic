@@ -41,7 +41,28 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('WhereamiCtrl', function($scope) {
+.controller('WhereamiCtrl', function($scope,$cordovaGeolocation) {
+    var map;
+    var nantes = {lat: 47.218371, lng: -1.553621};
+    map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 11,
+      center: nantes
+    });
+
+
+    $scope.getPos = function(){
+        var posOptions = {timeout: 10000, enableHighAccuracy: false};
+        $cordovaGeolocation
+          .getCurrentPosition(posOptions)
+          .then(function (position) {
+            var marker = new google.maps.Marker({
+              position: {lat: position.coords.latitude, lng: position.coords.longitude},
+              map: map
+            });
+          }, function(err) {
+            alert("error");
+          });
+    }
 
 })
 
