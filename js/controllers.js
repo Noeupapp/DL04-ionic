@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('MotionCtrl', function($scope) {
+.controller('MotionCtrl', function($scope,$cordovaDeviceMotion) {
 
 })
 
