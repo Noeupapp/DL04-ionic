@@ -69,13 +69,14 @@ angular.module('starter.controllers', [])
 
 .controller('PostsCtrl', function($scope,$http) {
 
-  $scope.users = [];
+  $scope.posts = [];
 
   $http({
     method: 'GET',
-    url: 'https://jsonplaceholder.typicode.com/users'
+    url: 'https://jsonplaceholder.typicode.com/posts'
   }).then(function(response) {
-      $scope.users = response.data;
+    console.log("response.data",response.data)
+      $scope.posts = response.data;
     }, function(response) {
 
     });
